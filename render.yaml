@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: changedetection-competitor
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    disk:
+      name: changedetection-data
+      mountPath: /datastore
+      sizeGB: 10
+    envVars:
+      - key: PORT
+        value: 5000
